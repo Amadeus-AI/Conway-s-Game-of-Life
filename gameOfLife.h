@@ -21,13 +21,13 @@ class gameOfLife{
         }
         void update(){
             int m = board.size(), n = board[0].size(), count = 0;
-            for (int i=0; i<m; ++i){
-                for (int j=0; j<n; ++j){
+            for(int i = 0; i < m; ++i){
+                for(int j = 0; j < n; ++j){
                     count = 0;
-                    for (int I=max(i-1, 0); I<min(i+2, m); ++I)
-                        for (int J=max(j-1, 0); J<min(j+2, n); ++J)
+                    for(int I = max(i-1, 0); I < min(i+2, m); ++I)
+                        for(int J = max(j-1, 0); J < min(j+2, n); ++J)
                             count += board[I][J] & 1;
-                    if (count == 3 || count - board[i][j] == 3)
+                    if(count == 3 || count - board[i][j] == 3)
                         board[i][j] |= 2;
                 }
             }
